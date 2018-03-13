@@ -73,7 +73,8 @@ footer{
   }
 }
 
-* Bordered form */
+/* This is the css for login/signup html*/
+/* Bordered form */
 form {
     border: 3px solid #f1f1f1;
 }
@@ -87,6 +88,7 @@ input[type=text], input[type=password] {
     border: 1px solid #ccc;
     box-sizing: border-box;
 }
+
 
 /* Set a style for all buttons */
 button {
@@ -143,4 +145,21 @@ span.psw {
     .cancelbtn {
         width: 100%;
     }
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 50%;
+}
+/* Extra styles for the cancel button */
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelbtn, .signupbtn {
+    width: 100%;
+  }
 }
