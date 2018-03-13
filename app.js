@@ -9,7 +9,7 @@
 var express = require('express');
 
 // cfenv provides access to your Cloud Foundry environment
-// for more info, see: https://www.npmjs.com/package/cfenv
+// for more info, see: https: //www.npmjs.com/package/cfenv
 var cfenv = require('cfenv');
 
 // create a new express server
@@ -26,4 +26,3 @@ app.listen(appEnv.port, '0.0.0.0', function() {
   // print a message when the server starts listening
   console.log("server starting on " + appEnv.url);
 });
-
