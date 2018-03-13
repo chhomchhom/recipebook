@@ -12,6 +12,14 @@
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   	<script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+    <script>
+      window.onload = function(){
+          var name = prompt("What's your name?");
+          var lengthOfName = name.length
+
+          document.getElementById('output').innerHTML = name;
+      };
+    </script>
   </head>
 
 <body>
@@ -47,9 +55,10 @@
       <div class="item active">
         <img src="img/mountains.png">
         <div class="carousel-caption">
-          <h1>Cool pictures</h1>
+          <h1>Hello</h1>
+          <h1 id="output"></h1>
           <br>
-          <button type ="button" class="btn bt-default">My Fake Button</button>
+          <!--<button type ="button" class="btn bt-default">My Fake Button</button>-->
         </div>
       </div><!--- End Active-->
       <div class="item">
