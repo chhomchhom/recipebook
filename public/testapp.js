@@ -9,11 +9,15 @@
     messagingSenderId: "291820315274"
   };
   firebase.initializeApp(config);
-  const preObject = document.getElementById('object');
-  const ulList = document.getElementById('list');
+  //Get Elements
 
-  const dbRefObject = firebase.database().ref().child('object');
-  const dbRefList = dbRefObject.child('hobbies');
+  const preObject = document.getElementById('object');
+  const ulList = document.getElementById('IngredientID');
+  const steps = document.getElementById('StepsID');
+  const title = document.getElementById('TitleID');
+  //Get Reference
+  const dbRefObject = firebase.database().ref().child('Recipe');
+  const dbRefList = dbRefObject.child('Ingredients');
 
 /*  dbRefObject.on('value', snap => {
     preObject.innerText =JSON.stringify(snap.val(), null, 3);
@@ -25,10 +29,27 @@
     //li.id =snap.key;
     ulList.appendChild(li);
   });
-
 }());
 
+function writeUserData(name, email, imageUrl) {
+  console.log("test");
+  var userId = guid();
+  firebase.database().ref('users/' + userId).set({
+    username: name,
+    email: email,
+    profile_picture : imageUrl
+  });
+}
+function guid() {
+  return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+    s4() + '-' + s4() + s4() + s4();
+}
 
+function s4() {
+  return Math.floor((1 + Math.random()) * 0x10000)
+    .toString(16)
+    .substring(1);
+}
 
 
 function saveToFirebase(email) {
