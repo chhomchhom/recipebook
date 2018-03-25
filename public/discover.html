@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<html>
 <head>
   <meta charset="utf-8">
-  <Title>Testing</title>
+  <Title>My Favourites</title>
   	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,38 +13,115 @@
   	<script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
   <style>
   </style>
+  </script>
+  <style>
+  </style>
 </head>
 <body>
-  <nav class ="navbar navbar-inverse">
-      <div class = "container-fluid">
-        <div class="navbr-header">
-          <button type = "button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-            <span class = "icon-bar"></span>
-            <span class = "icon-bar"></span>
-            <span class = "icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#"><img src="img/logo.jpg"></a>
+<nav class ="navbar navbar-inverse">
+    <div class = "container-fluid">
+      <div class="navbr-header">
+        <button type = "button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class = "icon-bar"></span>
+          <span class = "icon-bar"></span>
+          <span class = "icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#"><img src="img/logo.jpg"></a>
 
-        </div>
-        <div class ="collapse navbar-collapse" id="myNavbar">
-          <ul class = "nav navbar-nav navbar-right">
-            <li ><a href="index.html">Home</a></li>
-            <li> <a href="favourite.html">My Favourites</a></li>
-            <li class = "active"><a href="discover.html">Discover</a></li>
-            </li>
-          </ul>
-        </div>
       </div>
-  </nav>
-  <div class="container">
-    <header class="header">
-    </header>
-    <form class="form-signin">
-      <h2 class="form-signin-heading">Subscribe to our mailing list!</h2>
-      <label for="inputEmail" class="sr-only">Email address</label>
-      <input type="email" id="inputEmail" name="myEmail" class="form-control" placeholder="Email address" required autofocus>
-      <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="saveToFirebase('helloagain6@gmail.com')">Subscribe!</button>
-    </form>
-  </div>
-  </body>
-</html>
+      <div class ="collapse navbar-collapse" id="myNavbar">
+        <ul class = "nav navbar-nav navbar-right">
+          <li><a href="index.html">Home</a></li>
+          <li ><a href="favourite.html">Favourites</a></li>
+          <li class = "active"><a href="discover.html">Weekly Recipes</a></li>
+          </li>
+        </ul>
+      </div>
+    </div>
+</nav>
+
+<div class="container text-center">
+    <h2>Hot Recipes</h2>
+    <div class="row">
+      <div class="col-sm-4">
+        <img src="img/food.jpeg" id="icon">
+        <h4>Name: Chicken Breast with peppers</h4>
+        <h5>Ingredients: Chicken Breast, lime, red peppers</h5>
+        <h5>Steps: 1.preheat oven to 500 F
+          2. Season chicken with salt...
+        </h5>
+      </div>
+
+      <div class="col-sm-4">
+        <img src="img/food2.jpg" id="icon">
+        <h4>Name: Classic Taco </h4>
+        <h5>Ingredients: Ground beef, Tomato, lettuce...</h5>
+        <h5>Steps: 1.Cook ground beef
+          2. Season beef with salt...
+      </div>
+
+      <div class="col-sm-4">
+        <img src="img/food3.jpg" id="icon">
+        <h4>Name: New York style Burgers and fries</h4>
+        <h5>Ingredients: Beef patty, potatoes, cheese...</h5>
+        <h5>Steps: 1.preheat pan
+          2. Cut onions to thin slice
+      </div>
+    </div>
+
+    <div class = "row">
+      <div class="col-sm-4">
+        <img src="img/food4.jpg" id="icon">
+        <h4>Name: Strawberry Pancakes</h4>
+        <h5>Ingredients: Strawberries, Pancake batter...</h5>
+        <h5>Steps: 1.preheat pan
+          2. Mix batter...
+        </h5>
+      </div>
+
+      <div class="col-sm-4">
+        <img src="img/food5.jpg" id="icon">
+        <h4>Name: Thai Springrolls </h4>
+        <h5>Ingredients: Ground beef, Lettuce...</h5>
+        <h5>Steps: 1.Cook ground beef
+          2. Season beef with salt...
+      </div>
+
+      <div class="col-sm-4">
+        <img src="img/food6.jpg" id="icon">
+        <h4>Name: New York style Nachos</h4>
+        <h5>Ingredients: Nacho chips, cheese, green olives...</h5>
+        <h5>Steps: 1.Layout nachos
+          2. cover in cheese and...
+      </div>
+    </div>
+
+    <div class = "row">
+      <div class="col-sm-4">
+        <img src="img/food7.jpg" id="icon">
+        <h4>Name: Classic Pizza</h4>
+        <h5>Ingredients: Flour, pepperoni, vegetables...</h5>
+        <h5>Steps: 1.preheat oven to 500 F
+          2. rollout dough, spread sauce...
+        </h5>
+      </div>
+
+      <div class="col-sm-4">
+        <img src="img/food8.jpg" id="icon">
+        <h4>Name: Breakfast eggs, bacons, and pancakes </h4>
+        <h5>Ingredients: Eggs, Bacons, fruits...</h5>
+        <h5>Steps: 1.Cook eggs and bacon
+          2. chop fruits, fry pankcakes...
+      </div>
+
+      <div class="col-sm-4">
+        <img src="img/food9.jpg" id="icon">
+        <h4>Name: New York style Omlets</h4>
+        <h5>Ingredients: Eggs, Ham, cheese...</h5>
+        <h5>Steps: 1. cut up ham
+          2. cut cheese, fry up the eggs...
+      </div>
+    </div>
+
+</div>
+</body>
