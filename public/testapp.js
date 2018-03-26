@@ -30,7 +30,14 @@
     ulList.appendChild(li);
   });
 }());
-
+function readRecipe(){
+  console.log("testing");
+  var userId = firebase.auth().currentUser.uid;
+  return firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
+  var username = (snapshot.val() && snapshot.val().username) || 'Anonymous';
+  console.log(username);
+});
+}
 function writeUserData(name, email, imageUrl) {
   console.log("test");
   var userId = guid();
