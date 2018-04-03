@@ -23,28 +23,30 @@ nav.navbar.navbar-inverse
     #myNavbar.collapse.navbar-collapse
     ul.nav.navbar-nav.navbar-left
       li
-        a(href='/') Home
+        a(href='/main') Home
     ul.nav.navbar-nav.navbar-right
       li
-        a(href='/favourite') My Recipes
-      li
+        a(href='/favourite') Favourites
+      li.active
         a(href='/discover') Weekly Recipes
 .container.text-center
   .row
-    form(method='post', action="/addRecipe")
+    form#recipeform(method='post', action='/addRecipe')
       | Recipe Title:
       br
       input(type='text', name='Title')
       br
       |           Recipe Description:
-      input(type='text', name='Description')
+      br
+      textarea(name='Description', rows='4', cols='159', form='recipeform')
       br
       |           Recipe Ingredients:
-      input(type='text', name='Ingredients')
       br
+      textarea(name='Ingredients', rows='4', cols='159', form='recipeform')
+      br  
       |           Recipe Recipe Steps:
-      input(type='text', name='Steps')
-      br
+      textarea(name='Steps', rows='4', cols='159', form='recipeform')
+      br  
       |           Recipe Image:
       input(type='text', name='Image')
       br

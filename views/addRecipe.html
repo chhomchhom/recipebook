@@ -31,21 +31,15 @@
     </nav>
     <div class="container text-center">
       <div class="row">
-        <form method='post', action="/addRecipe">
+        <form method='post', action="/addRecipe" id=recipeform>
           Recipe Title:<br>
           <input type="text" name="Title"><br>
           Recipe Description:<br>
-          <input type="text" name="Description"><br>
-          Recipe Prep Time:
-          <input type="text" name="Prep Time"><br>
-          Recipe CookTime:
-          <input type="text" name="Cook Time"><br>
-          Recipe Difficulty:
-          <input type="text" name="Difficulty"><br>
+          <textarea name="Description" rows=4 cols=159 form=recipeform></textarea>
           Recipe Ingredients:
-          <input type="text" name="Ingredients"><br>
+          <textarea name="Ingredients" rows=4 cols=159 form=recipeform></textarea>
           Recipe Recipe Steps:
-          <input type="text" name="Steps"><br>
+          <textarea name="Steps" rows=4 cols=159 form=recipeform></textarea>
           Recipe Image:
           <input type="text" name="Image"><br>
           <input type="submit" value="Submit">
