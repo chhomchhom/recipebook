@@ -34,14 +34,17 @@ var con = mysql.createConnection({
   database: "users"
 });
 
-con.connect(function(err) {
-    if (err) throw err;
-    console.log("Connected!");
-
-      //console.log("1 record inserted");
-  });
 //registration function
 app.post('/register', function(req, res){
+    //need to add to database
+    con.connect(function(err) {
+        if (err) throw err;
+        console.log("Connected!");
+
+      });
+    res.redirect('main')
+})
+app.post('/login', function(req, res){
     //need to add to database
 
     res.redirect('main')
