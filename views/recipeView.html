@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>RecipeBook</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="stylesheets/myStyles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+    <style></style>
+    <style></style>
+</head>
+<body>
+  <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbr-header"><button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#myNavbar"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button></div>
+            <div class="collapse navbar-collapse" id="myNavbar"></div>
+            <ul class="nav navbar-nav navbar-left">
+                <li><a href="/main">Home</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/favourite">Favourites</a></li>
+                <li class="active"><a href="/discover">Weekly Recipes</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container text-center">
+        <h2>Hot Recipes</h2>
+        <div class="row">
+            <div class="col-sm-4"><img id="icon" src="img/food.jpeg">
+                <h4>Name: Chicken Breast with peppers</h4>
+                <h5>Ingredients: Chicken Breast, lime, red peppers</h5>
+                <h5>Steps: 1.preheat oven to 500 F 2. Season chicken with salt...</h5>
+            </div>
+            <div class="col-sm-4"><img id="icon" src="img/food2.jpg">
+                <h4>Name: Classic Taco</h4>
+                <h5>Ingredients: Ground beef, Tomato, lettuce...</h5>
+                <h5>Steps: 1.Cook ground beef 2. Season beef with salt...</h5>
+            </div>
+            <div class="col-sm-4"><img id="icon" src="img/food3.jpg">
+                <h4>Name: New York style Burgers and fries</h4>
+                <h5>Ingredients: Beef patty, potatoes, cheese...</h5>
+                <h5>Steps: 1.preheat pan 2. Cut onions to thin slice</h5>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4"><img id="icon" src="img/food4.jpg">
+                <h4>Name: Strawberry Pancakes</h4>
+                <h5>Ingredients: Strawberries, Pancake batter...</h5>
+                <h5>Steps: 1.preheat pan 2. Mix batter...</h5>
+            </div>
+            <div class="col-sm-4"><img id="icon" src="img/food5.jpg">
+                <h4>Name: Thai Springrolls</h4>
+                <h5>Ingredients: Ground beef, Lettuce...</h5>
+                <h5>Steps: 1.Cook ground beef 2. Season beef with salt...</h5>
+            </div>
+            <div class="col-sm-4"><img id="icon" src="img/food6.jpg">
+                <h4>Name: New York style Nachos</h4>
+                <h5>Ingredients: Nacho chips, cheese, green olives...</h5>
+                <h5>Steps: 1.Layout nachos 2. cover in cheese and...</h5>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4"><img id="icon" src="img/food7.jpg">
+                <h4>Name: Classic Pizza</h4>
+                <h5>Ingredients: Flour, pepperoni, vegetables...</h5>
+                <h5>Steps: 1.preheat oven to 500 F 2. rollout dough, spread sauce...</h5>
+            </div>
+            <div class="col-sm-4"><img id="icon" src="img/food8.jpg">
+                <h4>Name: Breakfast eggs, bacons, and pancakes</h4>
+                <h5>Ingredients: Eggs, Bacons, fruits...</h5>
+                <h5>Steps: 1.Cook eggs and bacon 2. chop fruits, fry pankcakes...</h5>
+            </div>
+            <div class="col-sm-4"><img id="icon" src="img/food9.jpg">
+                <h4>Name: New York style Omlets</h4>
+                <h5>Ingredients: Eggs, Ham, cheese...</h5>
+                <h5>Steps: 1. cut up ham 2. cut cheese, fry up the eggs...</h5>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
