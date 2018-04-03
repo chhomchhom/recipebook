@@ -56,7 +56,7 @@ app.post('/register', function(req, res){
         console.log("after insert")
       }
     });
-    res.redirect('main')
+    res.redirect('/')
 })
 
 //registration function
@@ -67,12 +67,11 @@ app.post('/register', function(req, res){
         console.log("Connected!");
 
       });
-    res.redirect('main')
+    res.redirect('/')
 })
 app.post('/login', function(req, res){
     //need to add to database
-
-    res.redirect('main')
+    res.redirect('/')
 })
 
 app.get('/', function(req, res){
