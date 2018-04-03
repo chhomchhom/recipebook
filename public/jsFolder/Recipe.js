@@ -55,7 +55,7 @@ var Recipe = (function () {
     Recipe.prototype.getRecipeName = function () {
         return this.recipeName;
     };
-    Recipe.prototype.getRecipeDescription = function () {
+    Recipe.prototype.getRecipeDiscription = function () {
         return this.recipeDescription;
     };
     Recipe.prototype.getRating = function () {

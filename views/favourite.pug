@@ -1,0 +1,57 @@
+html
+  head
+    meta(charset='utf-8')
+    title My Favourites
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+    link(rel='stylesheet', href='stylesheets/myStyles.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+    script(src='https://www.gstatic.com/firebasejs/4.11.0/firebase.js')
+    style.
+    style.
+  body
+    nav.navbar.navbar-inverse
+      .container-fluid
+        .navbr-header
+          button.navbar-toggle(type='button', data-toggle='collapse', data-target='#myNavbar')
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand(href='#')
+            img(src='img/logo.jpg')
+        #myNavbar.collapse.navbar-collapse
+          ul.nav.navbar-nav.navbar-right
+            li
+              a(href='/') Home
+            li.active
+              a(href='/favourite') My Favourites
+            li
+              a(href='/discover') Weekly Recipes
+    .container.text-center
+      h2 My Favourites
+      .row
+        .col-sm-4
+          img#icon(src='img/food4.jpg')
+          h4 Name: Strawberry Pancakes
+          h5 Ingredients: Strawberries, Pancake batter...
+          h5
+            | Steps: 1.preheat pan
+            | 2. Mix batter...
+        .col-sm-4
+          img#icon(src='img/food5.jpg')
+          h4 Name: Thai Springrolls
+          h5 Ingredients: Ground beef, Lettuce...
+          h5
+            | Steps: 1.Cook ground beef
+            | 2. Season beef with salt...
+        .col-sm-4
+          img#icon(src='img/food6.jpg')
+          h4 Name: New York style Nachos
+          h5 Ingredients: Nacho chips, cheese, green olives...
+          h5
+            | Steps: 1.Layout nachos
+            | 2. cover in cheese and...

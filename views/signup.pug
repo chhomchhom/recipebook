@@ -1,0 +1,57 @@
+doctype html
+html
+  head
+    title NodeJS Starter Application
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+    link(rel='stylesheet', href='stylesheets/myStyles.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+    script(src='https://www.gstatic.com/firebasejs/4.11.0/firebase.js')
+  body
+    // Create login page in this body
+    nav.navbar.navbar-inverse
+      .container-fluid
+        .navbr-header
+          button.navbar-toggle(type='button', data-toggle='collapse', data-target='#myNavbar')
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand(href='#')
+            img(src='img/logo.jpg')
+        #myNavbar.collapse.navbar-collapse
+          ul.nav.navbar-nav.navbar-right
+            li
+              a(href='login.html') Login
+            li.active
+              a(href='#') Sign Up
+            // <li><a href="discover.html">Discover</a></li>
+    // include code so that login actually grabs username/password info
+    .imgcontainer
+      img.avatar(src='img/virack.jpg', alt='Avatar')
+    .container
+      h1 Sign Up
+      p Please fill in this form to create an account.
+      hr
+      label(for='email')
+        b Email
+      input(type='text', placeholder='Enter Email', name='email', required='')
+      label(for='psw')
+        b Password
+      input(type='password', placeholder='Enter Password', name='psw', required='')
+      label(for='psw-repeat')
+        b Repeat Password
+      input(type='password', placeholder='Repeat Password', name='psw-repeat', required='')
+      label
+        input(type='checkbox', checked='checked', name='remember', style='margin-bottom:15px')
+        |  Remember me
+      p
+        | By creating an account you agree to our
+        a(href='#', style='color:dodgerblue') Terms & Privacy
+        | .
+      .clearfix
+        button.cancelbtn(type='button') Cancel
+        button.signupbtn(type='submit') Sign Up

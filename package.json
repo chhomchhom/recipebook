@@ -6,9 +6,12 @@
 		"start": "node app.js"
 	},
 	"dependencies": {
-		"express": "4.15.x",
 		"cfenv": "1.0.x",
-		"cloudant-nano": "*"
+		"cloudant-nano": "*",
+		"ejs": "^2.5.8",
+		"express": "4.15.x",
+		"html": "^1.0.0",
+		"pug": "^2.0.3"
 	},
 	"repository": {},
 	"engines": {

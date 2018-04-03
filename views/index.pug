@@ -1,0 +1,108 @@
+doctype html
+html
+  head
+    title NodeJS Starter Application
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+    link(rel='stylesheet', href='../stylesheets/myStyles.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+    script(src='https://www.gstatic.com/firebasejs/4.11.0/firebase.js')
+    //
+      code to test for input and display
+    
+  body
+    nav.navbar.navbar-inverse
+      .container-fluid
+        .navbr-header
+          button.navbar-toggle(type='button', data-toggle='collapse', data-target='#myNavbar')
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand(href='#')
+            img(src='img/logo.jpg')
+        #myNavbar.collapse.navbar-collapse
+          ul.nav.navbar-nav.navbar-right
+            li.active
+              a(href='#') Home
+            li
+              a(href='/favourite') My Favourites
+            li
+              a(href='/discover') Weekly Recipes
+    #myCarousel.carousel.slide(data-ride='carousel')
+      ol.carousel-indicators
+        li.active(data-target='#myCarousel', data-slide-to='0')
+        li(data-target='#myCarousel', data-slide-to='1')
+        li(data-target='#myCarousel', data-slide-to='2')
+      .carousel-inner(role='listbox')
+        .item.active
+          img(src='img/mountains.png')
+          .carousel-caption
+            h1 Hello
+            h1#output
+            br
+            // <button type ="button" class="btn bt-default">My Fake Button</button>
+        // - End Active
+        .item
+          img(src='img/snow.png')
+        .item
+          img(src='img/red.png')
+      // - start slider control
+      a.left.carousel-control(href='#myCarousel', role='button', data-slide='prev')
+        span.glyphicon.glyphicon-chevron-left(aria-hidden='true')
+        span.sr-only Previous
+      a.right.carousel-control(href='#myCarousel', role='button', data-slide='next')
+        span.glyphicon.glyphicon-chevron-right(aria-hidden='true')
+        span.sr-only Next
+    // - End Slider
+    .container.text-center
+      h2 What We are using
+      .row
+        .col-sm-4
+          img#icon(src='img/html5.png')
+          h4 HTML5
+        .col-sm-4
+          img#icon(src='img/bootstrap.png')
+          h4 Bootstrap
+        .col-sm-4
+          img#icon(src='img/css3.png')
+          h4 CSS3
+    //
+      <div class="container">
+      <div class="row">
+      <div class="col-md-6">
+      <h4>Place Holder Name</h4>
+      <p>
+      Place Holder Paragraph
+      </p>
+      </div>
+      <div class="col-md-6">
+      <img src="img/bootstrap2.jpg" class="img-responsive">
+      </div>
+      </div>
+      </div>
+      <div class="container">
+      <div class="row">
+      <h4><a href="#hidden" data-toggle="collapse">Hidden Link</a></h4>
+      <div id="hidden" class="collapse">
+      <h4>Cool Things</h4>
+      <p>
+      Cool stuff
+      </p>
+      </div>
+      </div>
+      </div>
+    footer.container-fluid.text-center
+      .row
+        .col-sm-4
+          h3 Contact the Creators
+          h4 Address and Contact info here
+        .col-sm-4
+          h3 Connect
+          a.fa.fa-facebook(href='#')
+          a.fa.fa-linkedin(href='#')
+        .col-sm-4
+          img.icon(src='img/bunny.png')
