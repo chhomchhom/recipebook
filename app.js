@@ -26,20 +26,34 @@ app.set("views", path.join(__dirname, "views"));
 app.use(express.static(path.join(__dirname, 'public')))
 //app.use(express.static(__dirname + '/public'));
 
+//registration function
+app.post('/register', function(req, res){
+    //need to add to database
+
+    res.redirect('main')
+})
+
 app.get('/', function(req, res){
-  res.render('index');
+  res.render('main');
+})
+app.get('/main', function(req, res){
+  res.render('main');
 })
 
 app.get('/favourite', function(req, res){
   res.render('favourite');
 })
 
-app.get('/login',function(req,res){
-  res.render('login');
-});
-
 app.get('/discover',function(req,res){
   res.render('discover');
+});
+
+app.get('/signup',function(req,res){
+  res.render('signup');
+});
+
+app.get('/login',function(req,res){
+  res.render('login');
 });
 
 var appEnv = cfenv.getAppEnv();
