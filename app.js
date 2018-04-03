@@ -8,6 +8,7 @@
 // for more info, see: http://expressjs.com
 var express = require('express');
 var path = require('path');
+var mysql = require('mysql');
 
 // cfenv provides access to your Cloud Foundry environment
 // for more info, see: https: //www.npmjs.com/package/cfenv
@@ -26,14 +27,19 @@ app.set("views", path.join(__dirname, "views"));
 app.use(express.static(path.join(__dirname, 'public')))
 //app.use(express.static(__dirname + '/public'));
 
-// var con = mysql.createConnection({
-//   host: "localhost",
-//   user: "root",
-//   password: "",
-//   database: "users"
-// });
+var con = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "",
+  database: "users"
+});
 
+con.connect(function(err) {
+    if (err) throw err;
+    console.log("Connected!");
 
+      //console.log("1 record inserted");
+  });
 //registration function
 app.post('/register', function(req, res){
     //need to add to database

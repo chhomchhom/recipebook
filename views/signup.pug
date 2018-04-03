@@ -28,6 +28,9 @@ nav.navbar.navbar-inverse
   p Please fill in this form to create an account.
   hr
   form(method='post', action='/register')
+    label(for='username')
+      b Username
+    input(type='text', placeholder='Enter username', name='username', required='')
     label(for='email')
       b Email
     input(type='text', placeholder='Enter Email', name='email', required='')
