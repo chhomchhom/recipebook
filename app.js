@@ -26,6 +26,14 @@ app.set("views", path.join(__dirname, "views"));
 app.use(express.static(path.join(__dirname, 'public')))
 //app.use(express.static(__dirname + '/public'));
 
+// var con = mysql.createConnection({
+//   host: "localhost",
+//   user: "root",
+//   password: "",
+//   database: "users"
+// });
+
+
 //registration function
 app.post('/register', function(req, res){
     //need to add to database
