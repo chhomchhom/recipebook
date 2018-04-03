@@ -63,46 +63,12 @@ nav.navbar.navbar-inverse
 .container.text-center
   h2 My Favourite Recipes
   .row
-    .col-sm-4
-      img#icon(src='img/food4.jpg')
-      h4 Name: Strawberry Pancakes
-      h5 Ingredients: Strawberries, Pancake batter...
-      h5 Steps: 1.preheat pan 2. Mix batter...
-    .col-sm-4
-      img#icon(src='img/food5.jpg')
-      h4 Name: Thai Springrolls
-      h5 Ingredients: Ground beef, Lettuce...
-      h5 Steps: 1.Cook ground beef 2. Season beef with salt...
-    .col-sm-4
-      img#icon(src='img/food6.jpg')
-      h4 Name: New York style Nachos
-      h5 Ingredients: Nacho chips, cheese, green olives...
-      h5 Steps: 1.Layout nachos 2. cover in cheese and...
-//
-  <div class="container">
-  <div class="row">
-  <div class="col-md-6">
-  <h4>Place Holder Name</h4>
-  <p>
-  Place Holder Paragraph
-  </p>
-  </div>
-  <div class="col-md-6">
-  <img src="img/bootstrap2.jpg" class="img-responsive">
-  </div>
-  </div>
-  </div>
-  <div class="container">
-  <div class="row">
-  <h4><a href="#hidden" data-toggle="collapse">Hidden Link</a></h4>
-  <div id="hidden" class="collapse">
-  <h4>Cool Things</h4>
-  <p>
-  Cool stuff
-  </p>
-  </div>
-  </div>
-  </div>
+    ul
+      for val in ['img/food4.jpg', 'img/food5.jpg', 'img/food6.jpg','img/food7.jpg']
+        .col-sm-3
+          img#icon(src=val)
+      
+      
 footer.container-fluid.text-center
   .row
     .col-sm-4
