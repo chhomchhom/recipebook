@@ -27,14 +27,15 @@ nav.navbar.navbar-inverse
 // include code so that login actually grabs username/password info
 
 .container
-  label(for='uname')
-    b Username
-  input(type='text', placeholder='Enter Username', name='uname', required='')
-  label(for='psw')
-    b Password
-  input(type='password', placeholder='Enter Password', name='psw', required='')
-  button(type='submit') Login
-  label
-    input(type='checkbox', checked='checked', name='remember')
-    |  Remember me
+  form(method='post', action='/register')
+    label(for='uname')
+      b Username
+    input(type='text', placeholder='Enter Username', name='uname', required='')
+    label(for='psw')
+      b Password
+    input(type='password', placeholder='Enter Password', name='psw', required='')
+    button(type='submit') Login
+    label
+      input(type='checkbox', checked='checked', name='remember')
+      |  Remember me
 .container(style='background-color:#f1f1f1')

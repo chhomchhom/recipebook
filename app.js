@@ -51,12 +51,26 @@ app.post('/register', function(req, res){
 
 
 
-
-    var sql = "INSERT INTO users (username, email, password) VALUES ('" + username1 + "', '" + email1 + "', '" + password1 + "')";
-    con.query(sql, function (err, result) {
+    con.query("SELECT * FROM users where email = '" + email1 + "'", function (err, result){
       if (err) throw err;
+      if(!result){
+        var sql = "INSERT INTO users (username, email, password) VALUES ('" + username1 + "', '" + email1 + "', '" + password1 + "')";
+        con.query(sql, function (err, result) {
+          if (err) throw err;
+          res.redirect('/')
+      });
+      }
+      else{
+        console.log("email already registerd");
+        res.render('signup',{
+          taken: true
+        })
+      }
   });
-    res.redirect('/')
+
+
+
+
 })
 
 app.post('/login', function(req, res){
@@ -75,11 +89,10 @@ app.post('/addRecipe',function(req,res){
   var steps = req.body.Steps
   var ingredients = req.body.Ingredients
 
-        console.log("before insert")
-        var sql = "INSERT INTO recipes (title, description, ingredients) VALUES ('" + title + "', '" + description+ "', '" +ingredients + "')";
-        con.query(sql, function (err, result) {
-          if (err) throw err;
-      });
+  var sql = "INSERT INTO recipes (title, description, ingredients) VALUES ('" + title + "', '" + description+ "', '" +ingredients + "')";
+  con.query(sql, function (err, result) {
+    if (err) throw err;
+  });
       console.log("recipe added")
   res.redirect('/')
 

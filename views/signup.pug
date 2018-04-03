@@ -27,6 +27,10 @@ nav.navbar.navbar-inverse
   h1 Sign Up
   p Please fill in this form to create an account.
   hr
+    
+  if taken == true
+    h2 Email already existeds
+
   form(method='post', action='/register')
     label(for='username')
       b Username
