@@ -36,49 +36,63 @@ var con = mysql.createConnection({
   password: "",
   database: "recipebook"
 });
+con.connect(function(err) {
+    if (err) throw err;
+    console.log("connected")
+});
 
-//registration function
+/////////////////////////////////Posts//////////////////////////////////////////
 app.post('/register', function(req, res){
 
     //need to add to database
     var username1 = req.body.username
     var email1 = req.body.email
     var password1 = req.body.psw
-    console.log(username1, email1, password1)
-    con.connect(function(err) {
-        if (err) throw err;
-        else{
-          console.log("before insert")
-          var sql = "INSERT INTO users (username, email, password) VALUES ('" + username1 + "', '" + email1 + "', '" + password1 + "')";
-          con.query(sql, function (err, result) {
-            if (err) throw err;
-        });
-        console.log("after insert")
-      }
-    });
+
+
+
+
+    var sql = "INSERT INTO users (username, email, password) VALUES ('" + username1 + "', '" + email1 + "', '" + password1 + "')";
+    con.query(sql, function (err, result) {
+      if (err) throw err;
+  });
     res.redirect('/')
 })
 
-//registration function
-app.post('/register', function(req, res){
-    //need to add to database
-    con.connect(function(err) {
-        if (err) throw err;
-        console.log("Connected!");
-
-      });
-    res.redirect('/')
-})
 app.post('/login', function(req, res){
     //need to add to database
+    con.query("SELECT * FROM users", function (err, result){
+      if (err) throw err;
+      else console.log(result);
+  });
     res.redirect('/')
 })
 
+app.post('/addRecipe',function(req,res){
+
+  var title = req.body.Title
+  var description = req.body.Description
+  var steps = req.body.Steps
+  var ingredients = req.body.Ingredients
+
+        console.log("before insert")
+        var sql = "INSERT INTO recipes (title, description, ingredients) VALUES ('" + title + "', '" + description+ "', '" +ingredients + "')";
+        con.query(sql, function (err, result) {
+          if (err) throw err;
+      });
+      console.log("recipe added")
+  res.redirect('/')
+
+});
+
+
+
+
+//////////////////////////////////////////////get///////////////////////////////
 app.get('/', function(req, res){
   console.log("Ok we are here")
   res.render('main');
 })
-
 
 app.get('/favourite', function(req, res){
   res.render('favourite');
@@ -98,19 +112,19 @@ app.get('/login',function(req,res){
 app.get('/recipeView',function(req,res){
   res.render('recipeView');
 });
-app.get('/addRecipe',function(req,res){
-  res.render('addRecipe');
-});
 
-app.post('/addRecipe',function(req,res){
 
-});
 
 var appEnv = cfenv.getAppEnv();
-
-
 // start server on the specified port and binding host
 app.listen(appEnv.port, '0.0.0.0', function() {
   // print a message when the server starts listening
   console.log("server starting on " + appEnv.url);
 });
+
+app.get('/addRecipe',function(req,res){
+    res.render('addRecipe');
+});
+
+
+////////////////////////Functions///////////////////////////////////////////////
