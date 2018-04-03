@@ -9,6 +9,7 @@
 var express = require('express');
 var path = require('path');
 var mysql = require('mysql');
+var bodyParser = require('body-parser')
 
 // cfenv provides access to your Cloud Foundry environment
 // for more info, see: https: //www.npmjs.com/package/cfenv
@@ -27,12 +28,36 @@ app.set("views", path.join(__dirname, "views"));
 app.use(express.static(path.join(__dirname, 'public')))
 //app.use(express.static(__dirname + '/public'));
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 var con = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "",
-  database: "users"
+  database: "recipebook"
 });
+
+//registration function
+app.post('/register', function(req, res){
+
+    //need to add to database
+    var username1 = req.body.username
+    var email1 = req.body.email
+    var password1 = req.body.psw
+    console.log(username1, email1, password1)
+    con.connect(function(err) {
+        if (err) throw err;
+        else{
+          console.log("before insert")
+          var sql = "INSERT INTO users (username, email, password) VALUES ('" + username1 + "', '" + email1 + "', '" + password1 + "')";
+          con.query(sql, function (err, result) {
+            if (err) throw err;
+        });
+        console.log("after insert")
+      }
+    });
+    res.redirect('main')
+})
 
 //registration function
 app.post('/register', function(req, res){
@@ -51,11 +76,10 @@ app.post('/login', function(req, res){
 })
 
 app.get('/', function(req, res){
+  console.log("Ok we are here")
   res.render('main');
 })
-app.get('/main', function(req, res){
-  res.render('main');
-})
+
 
 app.get('/favourite', function(req, res){
   res.render('favourite');
@@ -77,6 +101,10 @@ app.get('/recipeView',function(req,res){
 });
 app.get('/addRecipe',function(req,res){
   res.render('addRecipe');
+});
+
+app.post('/addRecipe',function(req,res){
+
 });
 
 var appEnv = cfenv.getAppEnv();

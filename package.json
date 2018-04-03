@@ -6,6 +6,7 @@
 		"start": "node app.js"
 	},
 	"dependencies": {
+		"body-parser": "^1.18.2",
 		"cfenv": "1.0.x",
 		"cloudant-nano": "*",
 		"ejs": "^2.5.8",
