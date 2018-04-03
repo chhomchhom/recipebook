@@ -1,0 +1,49 @@
+doctype html
+head
+  meta(charset='utf-8')
+  title RecipeBook
+  meta(charset='utf-8')
+  meta(http-equiv='X-UA-Compatible', content='IE=edge')
+  meta(name='viewport', content='width=device-width, initial-scale=1')
+  link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+  link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+  link(rel='stylesheet', href='stylesheets/myStyles.css')
+  script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+  script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+  script(src='https://www.gstatic.com/firebasejs/4.11.0/firebase.js')
+  style.
+  style.
+nav.navbar.navbar-inverse
+  .container-fluid
+    .navbr-header
+      button.navbar-toggle(type='button', data-toggle='collapse', data-target='#myNavbar')
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+    #myNavbar.collapse.navbar-collapse
+    ul.nav.navbar-nav.navbar-left
+      li
+        a(href='/main') Home
+    ul.nav.navbar-nav.navbar-right
+      li
+        a(href='/favourite') Favourites
+      li.active
+        a(href='/discover') Weekly Recipes
+.container.text-center
+  h2 Recipe Title
+  .row
+    .col-sm-12
+      img#icon(src='img/food.jpeg')
+  .row
+    h3 Recipe Description 
+  .row
+    h5 Rating
+  .row
+    div(style='clear: both')
+      h5(style='float: left') PrepTime
+      h5(style='float: center') CookTime
+      h5(style='float: right') Difficulty
+  .row
+    h3 Ingredients
+  .row
+    h3 Steps

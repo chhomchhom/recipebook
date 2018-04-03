@@ -75,6 +75,9 @@ app.get('/login',function(req,res){
 app.get('/recipeView',function(req,res){
   res.render('recipeView');
 });
+app.get('/addRecipe',function(req,res){
+  res.render('addRecipe');
+});
 
 var appEnv = cfenv.getAppEnv();
 
