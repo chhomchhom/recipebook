@@ -151,7 +151,7 @@ app.get('/recipeView/:recipeID',function(req,res){
       console.log("is 0");
     }
     else{
-      console.log("result: "+(JSON.stringify(result))
+      console.log("result: "+(JSON.stringify(result)))
     }
 
     res.render('recipeView', {result:result});
