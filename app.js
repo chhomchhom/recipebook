@@ -142,10 +142,21 @@ app.get('/signup',function(req,res){
 app.get('/login',function(req,res){
   res.render('login');
 });
-app.get('/recipeView',function(req,res){
+app.get('/recipeView/:recipeID',function(req,res){
   var recipeID = req.params.recipeID
   //Parse sql with recipeID
-  var title = con.query("SELECT title FROM recipes WHERE id = '" + recipeID + "'")
+  var title="title";
+  con.query("SELECT title FROM recipes WHERE id = '" + recipeID + "'",function(err,result){
+    console.log("result: "+result)
+    if(result==0){
+      console.log("is 0");
+    }
+    else{
+      console.log("result: "+(JSON.stringify(result)));
+      console.log("title is: "+result[0].title);
+    }
+    title =result
+  })
   console.log(title);
 
   res.render('recipeView');
