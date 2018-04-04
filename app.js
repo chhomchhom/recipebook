@@ -110,7 +110,7 @@ app.post('/addRecipe',function(req,res){
   var steps = req.body.Steps
   var ingredients = req.body.Ingredients
 
-  var sql = "INSERT INTO recipes (title, description, ingredients) VALUES ('" + title + "', '" + description+ "', '" +ingredients + "')";
+  var sql = "INSERT INTO recipes (title, description, ingredients, steps) VALUES ('" + title + "', '" + description+ "', '" +ingredients + "', '" +steps + "')";
   con.query(sql, function (err, result) {
     if (err) throw err;
   });
@@ -157,9 +157,6 @@ app.get('/recipeView/:recipeID',function(req,res){
     console.log("result: "+result)
     if(result==0){
       console.log("is 0");
-    }
-    else{
-      console.log("result: "+(JSON.stringify(result)))
     }
 
     res.render('recipeView', {result:result});

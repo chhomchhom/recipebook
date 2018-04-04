@@ -30,20 +30,20 @@ nav.navbar.navbar-inverse
       li.active
         a(href='/discover') Weekly Recipes
 .container.text-center
-  h2 Recipe Title #{result[0].title}!
+  h2 #{result[0].title}
   .row
     .col-sm-12
       img#icon(src='img/food.jpeg')
   .row
-    h3 Recipe Description #{result[0].description}!
+    h3 #{result[0].description}
   .row
-    h5 Rating
-  .row
+    h5 Rating: #{result[0].rating}
+  //.row
     div(style='clear: both')
       h5(style='float: left') PrepTime
       h5(style='float: center') CookTime
       h5(style='float: right') Difficulty
   .row
-    h3 Ingredients
+    h3 #{result[0].ingredients}
   .row
-    h3 Steps
+    h3 #{result[0].steps}
