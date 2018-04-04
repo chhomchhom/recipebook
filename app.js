@@ -109,8 +109,9 @@ app.post('/addRecipe',function(req,res){
   var description = req.body.Description
   var steps = req.body.Steps
   var ingredients = req.body.Ingredients
+  var image = req.body.Image
 
-  var sql = "INSERT INTO recipes (title, description, ingredients, steps) VALUES ('" + title + "', '" + description+ "', '" +ingredients + "', '" +steps + "')";
+  var sql = "INSERT INTO recipes (title, description, ingredients, steps, image) VALUES ('" + title + "', '" + description+ "', '" +ingredients + "', '" +steps + "', '" +image + "')";
   con.query(sql, function (err, result) {
     if (err) throw err;
   });
