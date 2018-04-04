@@ -53,7 +53,9 @@ app.post('/register', function(req, res){
 
     con.query("SELECT * FROM users where email = '" + email1 + "'", function (err, result){
       if (err) throw err;
-      if(!result){
+      console.log("result is: "+result)
+      if(result === ''){
+        console.log("did i get here?")
         var sql = "INSERT INTO users (username, email, password) VALUES ('" + username1 + "', '" + email1 + "', '" + password1 + "')";
         con.query(sql, function (err, result) {
           if (err) throw err;
@@ -61,7 +63,7 @@ app.post('/register', function(req, res){
       });
       }
       else{
-        console.log("email already registerd");
+        console.log("email already registered");
         res.render('signup',{
           taken: true
         })
@@ -104,10 +106,11 @@ app.post('/addRecipe',function(req,res){
 //////////////////////////////////////////////get///////////////////////////////
 
 
-app.get('/test.html', function(req, res){
+app.get('/test', function(req, res){
   console.log("Ok we are here")
-  res.render('test.html');
+  res.render('test');
 })
+
 app.get('/', function(req, res){
   console.log("Ok we are here")
   res.render('main');
