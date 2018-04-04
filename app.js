@@ -102,6 +102,12 @@ app.post('/addRecipe',function(req,res){
 
 
 //////////////////////////////////////////////get///////////////////////////////
+
+
+app.get('/test.html', function(req, res){
+  console.log("Ok we are here")
+  res.render('test.html');
+})
 app.get('/', function(req, res){
   console.log("Ok we are here")
   res.render('main');
