@@ -19,6 +19,7 @@ nav.navbar.navbar-inverse
         span.icon-bar
         span.icon-bar
     #myNavbar.collapse.navbar-collapse
+
       ul.nav.navbar-nav.navbar-left
         li.active
           a(href='/') Home
@@ -29,7 +30,8 @@ nav.navbar.navbar-inverse
   hr
     
   if taken == true
-    h2 Email and or Username already existeds
+    h3 Email or username is already registered please 
+      a(href='/Login') login
 
   form(method='post', action='/register')
     label(for='username')

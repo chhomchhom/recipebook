@@ -101,6 +101,7 @@ app.post('/login', function(req, res){
       res.redirect('/')
     }
   });
+});
 
 app.post('/addRecipe',function(req,res){
 

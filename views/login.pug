@@ -20,15 +20,17 @@ nav.navbar.navbar-inverse
         span.icon-bar
     #myNavbar.collapse.navbar-collapse
       ul.nav.navbar-nav.navbar-left
-
         li.active
           a(href='/') Home
 
 // include code so that login actually grabs username/password info
-if user == true
-  h2 User does not exist please 
-  a(href='/register') register
+//- if user == true
+//-   h3 User does not exist please 
+//-     a(href='/register') register
 .container
+  if user == true
+    h3 User does not exist please 
+      a(href='/register') register
   form(method='post', action='/login')
     label(for='email')
       b Email
