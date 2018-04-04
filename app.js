@@ -53,6 +53,7 @@ app.post('/register', function(req, res){
 
     con.query("SELECT * FROM users where email = '" + email1 + "'", function (err, result){
       if (err) throw err;
+      console.log("result is: "+result)
       //check if user inputted email exists in database
       if(result ==0){
         console.log("did i get here?")
@@ -87,22 +88,11 @@ app.post('/register', function(req, res){
 
 app.post('/login', function(req, res){
     //need to add to database
-  var email = req.body.email
-  con.query("SELECT email FROM users where email = '" + email + "'", function (err, result){
-    if (err) throw err;
-    if(result != 0){
-      res.redirect('/')
-    }
-    //need to send display message asking to register
-
-    else {
-       //res.send("email is not yet registered")
-       res.render('login',{
-         user: true
-       })
-    }
-    });
-
+    con.query("SELECT * FROM users", function (err, result){
+      if (err) throw err;
+      else console.log(result);
+  });
+    res.redirect('/')
 })
 
 app.post('/addRecipe',function(req,res){
@@ -155,21 +145,19 @@ app.get('/login',function(req,res){
 app.get('/recipeView/:recipeID',function(req,res){
   var recipeID = req.params.recipeID
   //Parse sql with recipeID
-  var title="title";
-  con.query("SELECT title FROM recipes WHERE id = '" + recipeID + "'",function(err,result){
+  con.query("SELECT * FROM recipes WHERE id = '" + recipeID + "'",function(err,result){
     console.log("result: "+result)
     if(result==0){
       console.log("is 0");
     }
     else{
-      console.log("result: "+(JSON.stringify(result)));
-      console.log("title is: "+result[0].title);
+      console.log("result: "+(JSON.stringify(result))
     }
-    title =result
-  })
-  console.log(title);
 
-  res.render('recipeView');
+    res.render('recipeView', {result:result});
+  })
+
+
 });
 
 
