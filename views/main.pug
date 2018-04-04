@@ -44,9 +44,10 @@ nav.navbar.navbar-inverse
     .item.active
       img(src='img/freshFoods.jpg')
       .carousel-caption
-        h1 Hello
-        h1#output
-        br
+        if user == false
+          h1 Hello #{result[0].username}
+          h1#output
+          br
         // <button type ="button" class="btn bt-default">My Fake Button</button>
     // - End Active
     .item

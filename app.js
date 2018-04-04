@@ -89,18 +89,25 @@ app.post('/register', function(req, res){
 app.post('/login', function(req, res){
     //need to add to database
   var email = req.body.email
-  con.query("SELECT email FROM users where email = '" + email + "'", function (err, result){
+  var username
+  con.query("SELECT username FROM users where email = '" + email + "'", function (err, result){
     if (err) throw err;
+
     if(result == 0){
       res.render('login',{
         user: true
       });
     }
     else {
-      console.log("it's exist")
-      res.redirect('/')
+      console.log("here")
+      console.log(result[0].username)
+      res.render('main',{
+        user: false, result: result
+
+      });
     }
-  });
+    });
+
 });
 
 app.post('/addRecipe',function(req,res){
@@ -162,11 +169,7 @@ app.get('/recipeView/:recipeID',function(req,res){
 
     res.render('recipeView', {result:result});
   })
-
-
 });
-
-
 
 var appEnv = cfenv.getAppEnv();
 // start server on the specified port and binding host
