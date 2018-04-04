@@ -54,14 +54,28 @@ app.post('/register', function(req, res){
     con.query("SELECT * FROM users where email = '" + email1 + "'", function (err, result){
       if (err) throw err;
       console.log("result is: "+result)
-      if(result === ''){
+      //check if user inputted email exists in database
+      if(result ==0){
         console.log("did i get here?")
         var sql = "INSERT INTO users (username, email, password) VALUES ('" + username1 + "', '" + email1 + "', '" + password1 + "')";
         con.query(sql, function (err, result) {
-          if (err) throw err;
-          res.redirect('/')
+          //check if there was an error with inserting
+          //specifically an error will occur if the username already exist in database
+          if(err){
+            console.log("username already registered");
+            res.render('signup',{
+              taken: true
+            })
+            //if everything all works and we insert into database
+            //redirect to main page
+          }else{
+            if (err) throw err;
+            res.redirect('/')
+          }
+
       });
       }
+      // email exists also
       else{
         console.log("email already registered");
         res.render('signup',{
