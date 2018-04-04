@@ -84,9 +84,6 @@ app.post('/register', function(req, res){
       }
   });
 
-
-
-
 })
 
 app.post('/login', function(req, res){
@@ -146,6 +143,11 @@ app.get('/login',function(req,res){
   res.render('login');
 });
 app.get('/recipeView',function(req,res){
+  var recipeID = req.params.recipeID
+  //Parse sql with recipeID
+  var title = con.query("SELECT title FROM recipes WHERE id = '" + recipeID + "'")
+  console.log(title);
+
   res.render('recipeView');
 });
 
