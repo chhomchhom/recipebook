@@ -25,12 +25,14 @@ nav.navbar.navbar-inverse
           a(href='/') Home
 
 // include code so that login actually grabs username/password info
-
+if user == true
+  h2 User does not exist please 
+  a(href='/register') register
 .container
-  form(method='post', action='/register')
-    label(for='uname')
+  form(method='post', action='/login')
+    label(for='email')
       b Email
-    input(type='text', placeholder='Enter Email', name='uname', required='')
+    input(type='text', placeholder='Enter Email', name='email', required='')
     label(for='psw')
       b Password
     input(type='password', placeholder='Enter Password', name='psw', required='')

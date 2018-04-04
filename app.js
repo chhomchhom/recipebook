@@ -53,7 +53,6 @@ app.post('/register', function(req, res){
 
     con.query("SELECT * FROM users where email = '" + email1 + "'", function (err, result){
       if (err) throw err;
-      console.log("result is: "+result)
       //check if user inputted email exists in database
       if(result ==0){
         console.log("did i get here?")
@@ -88,11 +87,22 @@ app.post('/register', function(req, res){
 
 app.post('/login', function(req, res){
     //need to add to database
-    con.query("SELECT * FROM users", function (err, result){
-      if (err) throw err;
-      else console.log(result);
-  });
-    res.redirect('/')
+  var email = req.body.email
+  con.query("SELECT email FROM users where email = '" + email + "'", function (err, result){
+    if (err) throw err;
+    if(result != 0){
+      res.redirect('/')
+    }
+    //need to send display message asking to register
+
+    else {
+       //res.send("email is not yet registered")
+       res.render('login',{
+         user: true
+       })
+    }
+    });
+
 })
 
 app.post('/addRecipe',function(req,res){
