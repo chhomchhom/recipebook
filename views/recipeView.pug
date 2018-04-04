@@ -30,12 +30,12 @@ nav.navbar.navbar-inverse
       li.active
         a(href='/discover') Weekly Recipes
 .container.text-center
-  h2 Recipe Title
+  h2 Recipe Title #{result[0].title}!
   .row
     .col-sm-12
       img#icon(src='img/food.jpeg')
   .row
-    h3 Recipe Description 
+    h3 Recipe Description #{result[0].description}!
   .row
     h5 Rating
   .row
