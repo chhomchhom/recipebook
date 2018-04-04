@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.7.7
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 03, 2018 at 11:53 PM
+-- Generation Time: Apr 04, 2018 at 05:33 PM
 -- Server version: 10.1.30-MariaDB
--- PHP Version: 7.2.1
+-- PHP Version: 7.2.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -34,41 +34,16 @@ CREATE TABLE `recipes` (
   `description` varchar(1000) NOT NULL,
   `image` blob NOT NULL,
   `ingredients` varchar(1000) NOT NULL,
-  `rating` int(11) NOT NULL DEFAULT '0'
+  `rating` int(11) NOT NULL DEFAULT '0',
+  `steps` varchar(1000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `recipes`
 --
 
-INSERT INTO `recipes` (`id`, `title`, `description`, `image`, `ingredients`, `rating`) VALUES
-(1, 'undefined', 'undefined', '', 'undefined', 0),
-(2, 'undefined', 'undefined', '', 'undefined', 0),
-(3, 'undefined', 'undefined', '', 'undefined', 0),
-(4, 'chicken', 'chicken', '', 'chicken', 0);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `users`
---
-
-CREATE TABLE `users` (
-  `username` varchar(100) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `password` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`username`, `email`, `password`) VALUES
-('khnsamnd', 'asfdsfd', 'asdfad'),
-('Virack', 'kkfk@gmail.com', '123456'),
-('ben', 'nagnstarkkk@gmail.co', '1234'),
-('rew', 'rew', 'rew'),
-('undefined', 'undefined', 'undefined');
+INSERT INTO `recipes` (`id`, `title`, `description`, `image`, `ingredients`, `rating`, `steps`) VALUES
+(1, 'Chicken', 'Chicken is delicious\r\nEat more Chicken\r\nChicken', '', 'Chicken \r\nsalt\r\npepper', 0, '1. cook the chicken\r\n2. eat the chicken');
 
 --
 -- Indexes for dumped tables
@@ -81,13 +56,6 @@ ALTER TABLE `recipes`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`email`),
-  ADD UNIQUE KEY `username` (`username`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -95,7 +63,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `recipes`
 --
 ALTER TABLE `recipes`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
