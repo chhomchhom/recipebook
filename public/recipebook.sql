@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 04, 2018 at 05:38 PM
+-- Generation Time: Apr 04, 2018 at 06:34 PM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.2
 
@@ -32,7 +32,7 @@ CREATE TABLE `recipes` (
   `id` int(5) NOT NULL,
   `title` varchar(50) NOT NULL,
   `description` varchar(1000) NOT NULL,
-  `image` blob NOT NULL,
+  `image` varchar(50) NOT NULL,
   `ingredients` varchar(1000) NOT NULL,
   `rating` int(11) NOT NULL DEFAULT '0',
   `steps` varchar(1000) NOT NULL
@@ -43,7 +43,8 @@ CREATE TABLE `recipes` (
 --
 
 INSERT INTO `recipes` (`id`, `title`, `description`, `image`, `ingredients`, `rating`, `steps`) VALUES
-(1, 'Chicken', 'Chicken is delicious\r\nEat more Chicken\r\nChicken', '', 'Chicken \r\nsalt\r\npepper', 0, '1. cook the chicken\r\n2. eat the chicken');
+(1, 'Chicken', 'Chicken is delicious\r\nEat more Chicken\r\nChicken', '', 'Chicken \r\nsalt\r\npepper', 0, '1. cook the chicken\r\n2. eat the chicken'),
+(3, 'classic taco', 'taco', 'food2.jpg', 'taco', 0, 'taco');
 
 -- --------------------------------------------------------
 
@@ -93,7 +94,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `recipes`
 --
 ALTER TABLE `recipes`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
