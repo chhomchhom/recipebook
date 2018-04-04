@@ -88,12 +88,19 @@ app.post('/register', function(req, res){
 
 app.post('/login', function(req, res){
     //need to add to database
-    con.query("SELECT * FROM users", function (err, result){
-      if (err) throw err;
-      else console.log(result);
+  var email = req.body.email
+  con.query("SELECT email FROM users where email = '" + email + "'", function (err, result){
+    if (err) throw err;
+    if(result == 0){
+      res.render('login',{
+        user: true
+      });
+    }
+    else {
+      console.log("it's exist")
+      res.redirect('/')
+    }
   });
-    res.redirect('/')
-})
 
 app.post('/addRecipe',function(req,res){
 
