@@ -42,19 +42,18 @@ con.connect(function(err) {
 });
 
 /////////////////////////////////Posts//////////////////////////////////////////
+//method will register users to the database
 app.post('/register', function(req, res){
-
     //need to add to database
     var username1 = req.body.username
     var email1 = req.body.email
     var password1 = req.body.psw
-
+//check to see if the email inputted is already in the database
     con.query("SELECT * FROM users where email = '" + email1 + "'", function (err, result){
       if (err) throw err;
       console.log("result is: "+result)
       //check if user inputted email exists in database
       if(result ==0){
-        console.log("did i get here?")
         var sql = "INSERT INTO users (username, email, password) VALUES ('" + username1 + "', '" + email1 + "', '" + password1 + "')";
         con.query(sql, function (err, result) {
           //check if there was an error with inserting
@@ -70,7 +69,6 @@ app.post('/register', function(req, res){
             if (err) throw err;
             res.redirect('/')
           }
-
       });
       }
       // email exists also
@@ -81,13 +79,15 @@ app.post('/register', function(req, res){
         })
       }
   });
-
 })
 
+
+//method will login a user
 app.post('/login', function(req, res){
     //need to add to database
   var email = req.body.email
   var username
+  //check if email exists in the database
   con.query("SELECT username FROM users where email = '" + email + "'", function (err, result){
     if (err) throw err;
 
@@ -97,7 +97,6 @@ app.post('/login', function(req, res){
       });
     }
     else {
-      console.log("here")
       console.log(result[0].username)
       res.render('main',{
         user: false, result: result
@@ -105,17 +104,18 @@ app.post('/login', function(req, res){
       });
     }
     });
-
 });
 
+//add a recipe to the database
 app.post('/addRecipe',function(req,res){
-
+  //grab the values from the input boxes
+  //from the addRecipe.pug view
   var title = req.body.Title
   var description = req.body.Description
   var steps = req.body.Steps
   var ingredients = req.body.Ingredients
   var image = req.body.Image
-
+  //insert into the database
   var sql = "INSERT INTO recipes (title, description, ingredients, steps, image) VALUES ('" + title + "', '" + description+ "', '" +ingredients + "', '" +steps + "', '" +image + "')";
   con.query(sql, function (err, result) {
     if (err) throw err;
@@ -125,37 +125,40 @@ app.post('/addRecipe',function(req,res){
 
 });
 
-
-
-
 //////////////////////////////////////////////get///////////////////////////////
 
-
+//redirect to test.pug
 app.get('/test', function(req, res){
-  console.log("Ok we are here")
   res.render('test');
 })
-
+//redirect to main.pug
 app.get('/', function(req, res){
   console.log("Ok we are here")
   res.render('main');
 })
-
+//redirect to favourite.pug
 app.get('/favourite', function(req, res){
   res.render('favourite');
 })
-
+//redirect to discover.pug
 app.get('/discover',function(req,res){
   res.render('discover');
 });
-
+//redirect to signup.pug
 app.get('/signup',function(req,res){
   res.render('signup');
 });
-
+//redirect to login.pug
 app.get('/login',function(req,res){
   res.render('login');
 });
+//redirect to addRecipe.pug
+app.get('/addRecipe',function(req,res){
+    res.render('addRecipe');
+});
+//redirect to recipeView
+//will load the info of the recipe from the database
+// and display all of its attribute in one page
 app.get('/recipeView/:recipeID',function(req,res){
   var recipeID = req.params.recipeID
   //Parse sql with recipeID
@@ -174,10 +177,3 @@ app.listen(appEnv.port, '0.0.0.0', function() {
   // print a message when the server starts listening
   console.log("server starting on " + appEnv.url);
 });
-
-app.get('/addRecipe',function(req,res){
-    res.render('addRecipe');
-});
-
-
-////////////////////////Functions///////////////////////////////////////////////
