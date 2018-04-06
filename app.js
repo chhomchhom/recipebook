@@ -1,7 +1,7 @@
 /*eslint-env node*/
 
 //------------------------------------------------------------------------------
-// node.js starter application for Bluemix
+// node.js starter application
 //------------------------------------------------------------------------------
 
 // This application uses express as its web server
@@ -48,8 +48,6 @@ app.post('/register', function(req, res){
     var username1 = req.body.username
     var email1 = req.body.email
     var password1 = req.body.psw
-
-
 
     con.query("SELECT * FROM users where email = '" + email1 + "'", function (err, result){
       if (err) throw err;
@@ -166,7 +164,6 @@ app.get('/recipeView/:recipeID',function(req,res){
     if(result==0){
       console.log("is 0");
     }
-
     res.render('recipeView', {result:result});
   })
 });

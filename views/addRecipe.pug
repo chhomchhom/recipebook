@@ -27,8 +27,10 @@ nav.navbar.navbar-inverse
     ul.nav.navbar-nav.navbar-right
       li
         a(href='/favourite') My Recipes
-      li.active
+      li
         a(href='/discover') Weekly Recipes
+      li.active
+        a(href='/addRecipe') Add Recipe
 .container.text-center
   .row
     form#recipeform(method='post', action='/addRecipe')
